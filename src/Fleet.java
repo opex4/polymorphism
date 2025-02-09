@@ -13,4 +13,10 @@ class Fleet {
             ship.move();
         }
     }
+
+    public void showСharacteristics() {
+        for (Ship ship : ships) {
+            ship.getСharacteristics();
+        }
+    }
 }

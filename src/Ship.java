@@ -3,7 +3,15 @@ abstract class Ship {
     protected double tonnage;
     protected double speed;
 
-    public Ship(String name, double tonnage, double speed) {
+    public Ship(String name, double tonnage, double speed) throws IllegalArgumentException {
+        if (!name.matches("[A-ZА-Я][a-zа-я]*") && !name.matches("[A-ZА-Я][a-zа-я]*(\s[A-ZА-Я][a-zа-я]*)*")) {
+            System.out.println("Некорректное название корабля");
+            throw new IllegalArgumentException();
+        }
+        if (tonnage <= 0) {
+            System.out.println("Тоннаж не может быть отрицательным или равным нулю");
+            throw new IllegalArgumentException();
+        }
         this.name = name;
         this.tonnage = tonnage;
         this.speed = speed;
@@ -14,4 +22,5 @@ abstract class Ship {
     public double getSpeed() { return speed; }
 
     public abstract void move();
+    public abstract void getСharacteristics();
 }

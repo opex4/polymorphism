@@ -8,6 +8,8 @@ class SailingShip extends Ship {
             throw new IllegalArgumentException();
         }
         this.maxWindageFactor = maxWindageFactor;
+        super.classShip = "Парусник";
+        getCharacteristics();
     }
 
     @Override
@@ -16,7 +18,12 @@ class SailingShip extends Ship {
     }
 
     @Override
-    public void getСharacteristics(){
-        System.out.println("Название: " + name + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
+    public void getCharacteristics(){
+        System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
+    }
+
+    @Override
+    public String getClassShip(){
+        return this.classShip;
     }
 }

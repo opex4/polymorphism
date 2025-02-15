@@ -8,6 +8,8 @@ class Steamboat extends Ship {
             throw new IllegalArgumentException();
         }
         this.numBoilers = numBoilers;
+        super.classShip = "Пароход";
+        getCharacteristics();
     }
 
     @Override
@@ -16,7 +18,12 @@ class Steamboat extends Ship {
     }
 
     @Override
-    public void getСharacteristics(){
-        System.out.println("Название: " + name + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nКоличество котлов: " + numBoilers + "\n");
+    public void getCharacteristics(){
+        System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nКоличество котлов: " + numBoilers + "\n");
+    }
+
+    @Override
+    public String getClassShip(){
+        return this.classShip;
     }
 }

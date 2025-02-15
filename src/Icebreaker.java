@@ -8,6 +8,8 @@ class Icebreaker extends Ship {
             throw new IllegalArgumentException();
         }
         this.iceThickness = iceThickness;
+        super.classShip = "Ледокол";
+        getCharacteristics();
     }
 
     @Override
@@ -16,7 +18,16 @@ class Icebreaker extends Ship {
     }
 
     @Override
-    public void getСharacteristics(){
-        System.out.println("Название: " + name + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
+    public void getCharacteristics(){
+        System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
+    }
+
+    @Override
+    public String getClassShip(){
+        return this.classShip;
+    }
+
+    public double getIceThickness(){
+        return this.iceThickness;
     }
 }

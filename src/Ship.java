@@ -1,11 +1,12 @@
 abstract class Ship {
+    protected String classShip;
     protected String name;
     protected double tonnage;
     protected double speed;
 
     public Ship(String name, double tonnage, double speed) throws IllegalArgumentException {
         if (!name.matches("[A-ZА-Я][a-zа-я]*") && !name.matches("[A-ZА-Я][a-zа-я]*(\s[A-ZА-Я][a-zа-я]*)*")) {
-            System.out.println("Некорректное название корабля");
+            System.out.println("Некорректное название корабля:\n1.Начало каждого слова с заглавной буквы\n2.Слова разделены пробелами\n3.Использовать можно только буквы");
             throw new IllegalArgumentException();
         }
         if (tonnage <= 0) {
@@ -22,5 +23,6 @@ abstract class Ship {
     public double getSpeed() { return speed; }
 
     public abstract void move();
-    public abstract void getСharacteristics();
+    public abstract void getCharacteristics();
+    public abstract String getClassShip();
 }

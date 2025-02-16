@@ -21,9 +21,4 @@ class Steamboat extends Ship {
     public void getCharacteristics(){
         System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nКоличество котлов: " + numBoilers + "\n");
     }
-
-    @Override
-    public String getClassShip(){
-        return this.classShip;
-    }
 }

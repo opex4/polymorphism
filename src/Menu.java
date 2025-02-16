@@ -99,7 +99,7 @@ public class Menu {
     private static void addShip(){
         int task = 0;
         while (task != 1 && task != 2 && task != 3 && task != 4 && task != 5) {
-            System.out.println("Введите номер класса добавляемого корабля:\n\t1.Ледокол\n\t2.Парусник\n\t3.Теплоход");
+            System.out.println("Введите номер класса добавляемого корабля:\n\t1.Ледокол\n\t2.Парусник\n\t3.Пароход");
             task = getInteger();
         }
         switch (task) {
@@ -118,7 +118,7 @@ public class Menu {
     }
 
     //Добавить ледокол
-    public static void addIcebreaker(){
+    private static void addIcebreaker(){
         try {
             System.out.println("Введите название корабля:");
             String name = getConsoleLine();
@@ -135,7 +135,7 @@ public class Menu {
     }
 
     //Добавить парусник
-    public static void addSailingShip(){
+    private static void addSailingShip(){
         try {
             System.out.println("Введите название корабля:");
             String name = getConsoleLine();
@@ -152,7 +152,7 @@ public class Menu {
     }
 
     //Добавить теплоход
-    public static void addSteamboat(){
+    private static void addSteamboat(){
         try {
             System.out.println("Введите название корабля:");
             String name = getConsoleLine();
@@ -172,5 +172,6 @@ public class Menu {
     private static void exitProgram() {
         System.out.println("Работа программы завершена");
         scannerNum.close();
+        scannerLine.close();
     }
 }

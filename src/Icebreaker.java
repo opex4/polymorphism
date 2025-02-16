@@ -22,11 +22,6 @@ class Icebreaker extends Ship {
         System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
     }
 
-    @Override
-    public String getClassShip(){
-        return this.classShip;
-    }
-
     public double getIceThickness(){
         return this.iceThickness;
     }

@@ -24,5 +24,4 @@ abstract class Ship {
 
     public abstract void move();
     public abstract void getCharacteristics();
-    public abstract String getClassShip();
 }

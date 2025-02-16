@@ -21,9 +21,4 @@ class SailingShip extends Ship {
     public void getCharacteristics(){
         System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
     }
-
-    @Override
-    public String getClassShip(){
-        return this.classShip;
-    }
 }

@@ -13,6 +13,10 @@ abstract class Ship {
             System.out.println("Тоннаж не может быть отрицательным или равным нулю");
             throw new IllegalArgumentException();
         }
+        if (speed <= 0) {
+            System.out.println("Скорость не может быть отрицательной или равной нулю");
+            throw new IllegalArgumentException();
+        }
         this.name = name;
         this.tonnage = tonnage;
         this.speed = speed;

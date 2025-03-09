@@ -24,6 +24,7 @@ public abstract class Ship {
         this.speed = speed;
     }
 
+//    public String getClassShip(){ return classShip; }
 //    public String getName() { return name; }
 //    public double getTonnage() { return tonnage; }
 //    public double getSpeed() { return speed; }

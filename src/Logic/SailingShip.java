@@ -1,4 +1,6 @@
-class SailingShip extends Ship {
+package Logic;
+
+public class SailingShip extends Ship {
     private double maxWindageFactor;
 
     public SailingShip(String name, double tonnage, double speed, double maxWindageFactor) {
@@ -13,12 +15,12 @@ class SailingShip extends Ship {
     }
 
     @Override
-    public void move() {
-        System.out.println(name + " движется под парусами со скоростью " + speed + " узлов.");
+    public String move() {
+        return (name + " движется под парусами со скоростью " + speed + " узлов.");
     }
 
     @Override
-    public void getCharacteristics(){
-        System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
+    public String getCharacteristics(){
+        return ("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
     }
 }

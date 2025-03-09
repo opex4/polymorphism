@@ -1,4 +1,6 @@
-abstract class Ship {
+package Logic;
+
+public abstract class Ship {
     protected String classShip;
     protected String name;
     protected double tonnage;
@@ -22,10 +24,10 @@ abstract class Ship {
         this.speed = speed;
     }
 
-    public String getName() { return name; }
-    public double getTonnage() { return tonnage; }
-    public double getSpeed() { return speed; }
+//    public String getName() { return name; }
+//    public double getTonnage() { return tonnage; }
+//    public double getSpeed() { return speed; }
 
-    public abstract void move();
-    public abstract void getCharacteristics();
+    public abstract String move();
+    public abstract String getCharacteristics();
 }

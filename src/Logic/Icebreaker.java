@@ -1,4 +1,6 @@
-class Icebreaker extends Ship {
+package Logic;
+
+public class Icebreaker extends Ship {
     private double iceThickness;
 
     public Icebreaker(String name, double tonnage, double speed, double iceThickness) {
@@ -13,13 +15,13 @@ class Icebreaker extends Ship {
     }
 
     @Override
-    public void move() {
-        System.out.println(name + " пробивает лед со скоростью " + speed + " узлов.");
+    public String move() {
+        return (name + " пробивает лед со скоростью " + speed + " узлов.");
     }
 
     @Override
-    public void getCharacteristics(){
-        System.out.println("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
+    public String getCharacteristics(){
+        return ("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
     }
 
     public double getIceThickness(){

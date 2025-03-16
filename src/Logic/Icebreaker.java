@@ -5,23 +5,22 @@ public class Icebreaker extends Ship {
 
     public Icebreaker(String name, double tonnage, double speed, double iceThickness) {
         super(name, tonnage, speed);
-        if (iceThickness < 0) {
-            System.out.println("Толщина пробиваемого льда не может быть отрицательной");
-            throw new IllegalArgumentException();
+        if (iceThickness <= 0) {
+            throw new IllegalArgumentException("Толщина пробиваемого льда должна быть больше нуля");
         }
         this.iceThickness = iceThickness;
-        super.classShip = "Ледокол";
+        super.setClassShip("Ледокол");
         getCharacteristics();
     }
 
     @Override
     public String move() {
-        return (name + " пробивает лед со скоростью " + speed + " узлов.");
+        return (getName() + " пробивает лед со скоростью " + getSpeed() + " узлов.");
     }
 
     @Override
     public String getCharacteristics(){
-        return ("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
+        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage() + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
     }
 
     public double getIceThickness(){

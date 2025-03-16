@@ -1,25 +1,17 @@
 package GUI;
+
 import Logic.Fleet;
 import javax.swing.*;
+import java.awt.*;
 
 public class FunctionSelectionPanel extends JPanel {
 
-//    private Fleet fleet;
-//    private OutputPanel outputPanel;
-
     public FunctionSelectionPanel(Fleet fleet, OutputPanel outputPanel) {
-//        this.fleet = fleet;
-//        this.outputPanel = outputPanel;5
-
-
-
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JButton showFleetButton = new JButton("Показать флот");
         JButton showCharacteristicsButton = new JButton("Показать характеристики");
         JButton findBestIcebreakerButton = new JButton("Найти лучший ледокол");
-
-
 
         // Кнопка для показа флота
         showFleetButton.addActionListener(e -> {

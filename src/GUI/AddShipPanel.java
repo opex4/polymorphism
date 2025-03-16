@@ -15,7 +15,7 @@ public class AddShipPanel extends JPanel {
 
     public AddShipPanel(Fleet fleet) {
         this.fleet = fleet;
-        setLayout(new GridLayout(7, 2));
+        setLayout(new GridLayout(6, 2));
 
         // Добавляем элементы формы
         add(new JLabel("Название корабля:"));
@@ -63,7 +63,7 @@ public class AddShipPanel extends JPanel {
             case "Пароход" -> "Количество котлов:";
             default -> "Дополнительный параметр:";
         };
-        additionalLabel.setText(labelText); // Обновляем текст метки
+        additionalLabel.setText(labelText); // Обновляем текст
     }
 
     private void addShipToFleet() {
@@ -91,10 +91,10 @@ public class AddShipPanel extends JPanel {
 
             if (newShip != null) {
                 fleet.addShip(newShip);
-                JOptionPane.showMessageDialog(this, "Корабль добавлен в флот.");
+                JOptionPane.showMessageDialog(this, "Корабль добавлен в флот.\n" + newShip.getCharacteristics());
             }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Ошибка при добавлении корабля.");
+        } catch (Exception IllegalArgumentException) {
+            JOptionPane.showMessageDialog(this, IllegalArgumentException.getMessage());
         }
     }
 }

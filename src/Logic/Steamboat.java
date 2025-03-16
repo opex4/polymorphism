@@ -5,22 +5,21 @@ public class Steamboat extends Ship {
 
     public Steamboat(String name, double tonnage, double speed, int numBoilers) {
         super(name, tonnage, speed);
-        if (numBoilers < 0) {
-            System.out.println("Количество котлов должно быть больше нуля");
-            throw new IllegalArgumentException();
+        if (numBoilers <= 0) {
+            throw new IllegalArgumentException("Количество котлов должно быть больше нуля");
         }
         this.numBoilers = numBoilers;
-        super.classShip = "Пароход";
+        super.setClassShip("Пароход");
         getCharacteristics();
     }
 
     @Override
     public String move() {
-        return (name + " движется на паровом двигателе со скоростью " + speed + " узлов.");
+        return (getName() + " движется на паровом двигателе со скоростью " + getSpeed() + " узлов.");
     }
 
     @Override
     public String getCharacteristics(){
-        return ("Название: " + name + "\nКласс корабля: " + classShip + "\nСкорость: " + speed + " узлов" + "\nТоннаж: " + tonnage + "\nКоличество котлов: " + numBoilers + "\n");
+        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage() + "\nКоличество котлов: " + numBoilers + "\n");
     }
 }

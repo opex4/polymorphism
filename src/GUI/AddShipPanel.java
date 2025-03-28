@@ -5,6 +5,8 @@ import java.awt.*;
 import Logic.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class AddShipPanel extends JPanel {
 
@@ -53,6 +55,43 @@ public class AddShipPanel extends JPanel {
                 updateAdditionalLabel();
             }
         });
+
+
+        nameField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (Character.isDigit(e.getKeyChar())) {
+                    e.consume();
+                }
+            }
+        });
+
+        tonnageField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!Character.isDigit(e.getKeyChar()) && !(e.getKeyChar() == '.')) {
+                    e.consume();
+                }
+            }
+        });
+
+        speedField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!Character.isDigit(e.getKeyChar()) && !(e.getKeyChar() == '.')) {
+                    e.consume();
+                }
+            }
+        });
+
+        additionalField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!Character.isDigit(e.getKeyChar()) && !(e.getKeyChar() == '.')) {
+                    e.consume();
+                }
+            }
+        });
     }
 
     private void updateAdditionalLabel() {
@@ -68,12 +107,16 @@ public class AddShipPanel extends JPanel {
 
     private void addShipToFleet() {
         try {
+            if (nameField.getText().isEmpty() || tonnageField.getText().isEmpty() || speedField.getText().isEmpty()){
+                throw new IllegalArgumentException("Все поля должны быть заполнены!");
+            }
+
             String name = nameField.getText();
             double tonnage = Double.parseDouble(tonnageField.getText());
             double speed = Double.parseDouble(speedField.getText());
             String shipType = (String) shipTypeComboBox.getSelectedItem();
-            Ship newShip = null;
 
+            Ship newShip = null;
             switch (shipType) {
                 case "Парусник":
                     double windage = Double.parseDouble(additionalField.getText());
@@ -91,10 +134,10 @@ public class AddShipPanel extends JPanel {
 
             if (newShip != null) {
                 fleet.addShip(newShip);
-                JOptionPane.showMessageDialog(this, "Корабль добавлен в флот.\n" + newShip.getCharacteristics());
+                JOptionPane.showMessageDialog(this, "Корабль добавлен в флот.\n" + newShip.getCharacteristics(), "Успех", JOptionPane.PLAIN_MESSAGE);
             }
-        } catch (Exception IllegalArgumentException) {
-            JOptionPane.showMessageDialog(this, IllegalArgumentException.getMessage());
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Ошибка", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

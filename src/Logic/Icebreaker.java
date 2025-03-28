@@ -20,7 +20,12 @@ public class Icebreaker extends Ship {
 
     @Override
     public String getCharacteristics(){
-        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage() + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
+        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage()  + " т" + "\nТолщина пробиваемого льда: " + iceThickness + " м" + "\n");
+    }
+
+    @Override
+    public String getTableCharacteristics(){
+        return (getName() + "," + getClassShip()  + "," + getSpeed()  + "," + getTonnage()  + "," + getIceThickness() + "\n");
     }
 
     public double getIceThickness(){

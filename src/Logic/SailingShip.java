@@ -13,6 +13,10 @@ public class SailingShip extends Ship {
         getCharacteristics();
     }
 
+    public double getMaxWindageFactor() {
+        return maxWindageFactor;
+    }
+
     @Override
     public String move() {
         return (getName() + " движется под парусами со скоростью " + getSpeed() + " узлов.");
@@ -20,6 +24,11 @@ public class SailingShip extends Ship {
 
     @Override
     public String getCharacteristics(){
-        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage() + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
+        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage() + " т" + "\nМаксимальный коэффициент парусности: " + maxWindageFactor + " кв. м" + "\n");
+    }
+
+    @Override
+    public String getTableCharacteristics(){
+        return (getName() + "," + getClassShip() + "," + getSpeed() + "," + getTonnage() + "," + getMaxWindageFactor() + "\n");
     }
 }

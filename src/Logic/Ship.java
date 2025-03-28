@@ -32,4 +32,5 @@ public abstract class Ship {
 
     public abstract String move();
     public abstract String getCharacteristics();
+    public abstract String getTableCharacteristics();
 }

@@ -13,6 +13,10 @@ public class Steamboat extends Ship {
         getCharacteristics();
     }
 
+    public int getNumBoilers() {
+        return numBoilers;
+    }
+
     @Override
     public String move() {
         return (getName() + " движется на паровом двигателе со скоростью " + getSpeed() + " узлов.");
@@ -20,6 +24,11 @@ public class Steamboat extends Ship {
 
     @Override
     public String getCharacteristics(){
-        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage() + "\nКоличество котлов: " + numBoilers + "\n");
+        return ("Название: " + getName() + "\nКласс корабля: " + getClassShip() + "\nСкорость: " + getSpeed() + " узлов" + "\nТоннаж: " + getTonnage()  + " т" + "\nКоличество котлов: " + numBoilers + "\n");
+    }
+
+    @Override
+    public String getTableCharacteristics(){
+        return (getName() + "," + getClassShip() + "," + getSpeed() + "," + getTonnage() + "," + getNumBoilers() + "\n");
     }
 }

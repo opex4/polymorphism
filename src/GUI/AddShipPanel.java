@@ -10,10 +10,10 @@ import java.awt.event.KeyEvent;
 
 public class AddShipPanel extends JPanel {
 
-    private Fleet fleet;
-    private JTextField nameField, tonnageField, speedField, additionalField;
-    private JComboBox<String> shipTypeComboBox;
-    private JLabel additionalLabel;
+    private final Fleet fleet;
+    private final JTextField nameField, tonnageField, speedField, additionalField;
+    private final JComboBox<String> shipTypeComboBox;
+    private final JLabel additionalLabel;
 
     public AddShipPanel(Fleet fleet) {
         this.fleet = fleet;
@@ -56,7 +56,7 @@ public class AddShipPanel extends JPanel {
             }
         });
 
-
+        // Добавляем слушатель событий на добавление символов в JTextField
         nameField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {

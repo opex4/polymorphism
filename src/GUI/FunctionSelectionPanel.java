@@ -2,7 +2,6 @@ package GUI;
 
 import Logic.Fleet;
 import javax.swing.*;
-import java.awt.*;
 
 public class FunctionSelectionPanel extends JPanel {
 

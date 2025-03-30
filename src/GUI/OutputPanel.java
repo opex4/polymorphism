@@ -6,13 +6,12 @@ import java.awt.*;
 
 public class OutputPanel extends JPanel {
 
-    private DefaultTableModel model;
-    private JTable table;
+    private final DefaultTableModel model;
 
     public OutputPanel() {
         setLayout(new BorderLayout());
         model = new DefaultTableModel(new String[]{"Поле для вывода результатов"}, 0);
-        table = new JTable(model);
+        JTable table = new JTable(model);
         table.setDefaultEditor(Object.class, null);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setPreferredSize(new Dimension(400, 200));

@@ -1,7 +1,7 @@
 package Logic;
 
 public class SailingShip extends Ship {
-    private double maxWindageFactor;
+    private final double maxWindageFactor;
 
     public SailingShip(String name, double tonnage, double speed, double maxWindageFactor) {
         super(name, tonnage, speed);

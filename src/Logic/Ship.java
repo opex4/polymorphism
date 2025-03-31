@@ -2,9 +2,9 @@ package Logic;
 
 public abstract class Ship {
     private String classShip;
-    private String name;
-    private double tonnage;
-    private double speed;
+    private final String name;
+    private final double tonnage;
+    private final double speed;
 
     public Ship(String name, double tonnage, double speed) throws IllegalArgumentException {
         if (!name.matches("[A-ZА-Я][a-zа-я]*") && !name.matches("[A-ZА-Я][a-zа-я]*(\s[A-ZА-Я][a-zа-я]*)*")) {

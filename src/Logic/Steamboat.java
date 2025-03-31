@@ -1,7 +1,7 @@
 package Logic;
 
 public class Steamboat extends Ship {
-    private int numBoilers;
+    private final int numBoilers;
 
     public Steamboat(String name, double tonnage, double speed, int numBoilers) {
         super(name, tonnage, speed);

@@ -1,7 +1,7 @@
 package Logic;
 
 public class Icebreaker extends Ship {
-    private double iceThickness;
+    private final double iceThickness;
 
     public Icebreaker(String name, double tonnage, double speed, double iceThickness) {
         super(name, tonnage, speed);

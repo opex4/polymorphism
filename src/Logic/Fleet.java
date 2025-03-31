@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fleet {
-    private List<Ship> ships = new ArrayList<>();
+    private final List<Ship> ships = new ArrayList<>();
 
     // Метод для добавления корабля в флот
     public void addShip(Ship ship) {

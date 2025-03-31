@@ -5,7 +5,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class OutputPanel extends JPanel {
-
     private final DefaultTableModel model;
 
     public OutputPanel() {
